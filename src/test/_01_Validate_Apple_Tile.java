@@ -2,6 +2,7 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.Driver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,11 +16,13 @@ public class _01_Validate_Apple_Tile {
         // 1st: manual check = MATCH
         // 2nd: automate test case
 
-        System.setProperty("webdriver.chromedriver", "/Users/ngo/IdeaProjects/Selenium_Intro/chromedriver");
-        WebDriver driver = new ChromeDriver();
+       //System.setProperty("webdriver.chromedriver", "/Users/ngo/IdeaProjects/Selenium_Intro/chromedriver");
+       //WebDriver driver = new ChromeDriver();
 
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       //driver.manage().window().maximize();
+       //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        WebDriver driver = Driver.getDriver();
 
         driver.get("https://www.apple.com/");
 
@@ -28,8 +31,8 @@ public class _01_Validate_Apple_Tile {
 
         System.out.println("END OF THE PROGRAM");
 
-        driver.quit();
-
+        //driver.quit();
+        Driver.quitDriver();
 
 
     }

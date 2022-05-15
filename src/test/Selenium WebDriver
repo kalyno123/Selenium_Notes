@@ -5,7 +5,9 @@
 
 ** Maximize browser:
 driver.manage().window().maximize(); // this line maximizes the current window if it is not already maximized
+- MENU BAR IS VISIBLE & DESKTOP NOT COVERED BY BROWSER
 driver.manage().window().fullscreen(): // this line fullscreens the current window if it is not already fullscreen
+- MENU BAR IS NOT VISIBLE & DESKTOP IS COVERED BY BROWSER
 
 ** Title validation & URL validation:
 driver.getTitle(); // this line returns the title of the current page as a String; returns null if title is not set for the page
@@ -13,7 +15,9 @@ driver.getCurrentUrl(); // this line returns the URL of the current page as a St
 
 ** Selenium Navigation:
 driver.get() is used to navigate to a particular website, but it does not maintain the browser history and cookies. That’s why , we cannot use forward, backward or refresh functions
+- ITS THREAD SAFE/ SYNC DUE TO IMPLICITLYWAIT(); THEREFORE ITS SLOWER
 driver.navigate().to() is also used to navigate to a particular website , but it maintains the browser history and cookies. So, we can use forward, backward and refresh functions to navigate between the web pages
+- CACHING BROWSING HISTORY & NOT THREAD SAFE/NOT SYNC SO ITS FASTER
 
 driver.get(“applicationURL”); // this line will navigate us to specified web application
 driver.navigate().to(); // this line is used to navigate a particular page
