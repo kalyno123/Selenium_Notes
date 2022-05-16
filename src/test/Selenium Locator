@@ -1,0 +1,25 @@
+There are mainly 2 methods helps us to findElements:
+findElement() method returns a single web element and it can be stored in a WebElement variable
+findElements() method returns a list of web elements and they can be stored in an ArrayList<WebElement>
+
+All these methods are used with web elements and return true or false:
+isDisplayed() method is used to verify the presence of a particular web element and it will return true if element is found, and false otherwise
+isEnabled() is mostly used with buttons and it verifies if the web element is enabled or disabled
+isSelected() is mostly used with radio buttons, dropdowns and checkboxes and it verifies if the web element is selected or not
+
+SELENIUM LOCATORS (8):
+1. className = to find web elements based on the unique class attribute values of the DOM.
+2. id = most common ways of identifying elements on a web page. id for a web element always needs to be unique (1 of 1).
+It is the fastest way of locating web elements and is most reliable(stable) methods for determining an element.
+3. name = a web page can have multiple elements with the same name attribute. If locating by name, always make sure that the name attribute is unique in the DOM.
+4. tagName = the tag name is the HTML tag, such as input, div, anchor tag, button, etc. The tagName locator returns all the elements from the page that has the specified tag.
+5. linkText and 6. partialLinkText = used to locate web elements by using the hyperlink texts. Therefore web element must contain anchor (<a></a>) tags.
+7. CSS Selector (2nd fastest). Syntax ---> CSS Selector: tagName[attribute='value']
+8. XPath (most flexible). Syntax ---> Absolute XPath: /html/body/form/div/span/span
+                                      Relative XPath: //tagName[@attributeName=’value’]
+NOTE: Like the other locator strategies, if multiple hyperlinks with the same texts are present on the page, then Selenium will always choose the FIRST one.
+NOTE: name, link text, className, id, partial link text, tag name locators are looking for the given attribute name, and, finding the matching attribute value.
+
+
+
+
