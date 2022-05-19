@@ -27,47 +27,63 @@ public class FacebookPractice {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        driver.get("https://www.facebook.com/");
+        /*
+        xpath --> //tagName[@attributeName = 'attributeValue'] ___ //img[@class = 'fb_logo _8ilh img']
+        css   --> tagName[attributeName = 'attributeValue']    ___ img[class = 'fb_logo _8ilh img']
 
-        if (driver.getTitle().equals("Facebook - Log In or Sign Up")) System.out.println("Title validation = PASSED");
-        else System.out.println("Title validation = FAILED");
+        WebElement fbLogo = driver.findElement(By.className("fb_logo"));
+        WebElement fbLogo = driver.findElement(By.cssSelector(".fb_logo"));
+        WebElement fbLogo = driver.findElement(By.xpath("//img[@class = 'fb_logo _8ilh img']"));
+        WebElement fbLogo = driver.findElement(By.cssSelector("img[class = 'fb_logo _8ilh img']"));
+        */
 
-        if (driver.getCurrentUrl().equals("https://www.facebook.com/")) System.out.println("URL validation = PASSED");
-        else System.out.println("URL validation = FAILED");
+        try {
+            driver.get("https://www.facebook.com/"); // get the website
 
-        WebElement logo = driver.findElement(By.cssSelector("img[class='fb_logo _8ilh img'")); // driver.findElement(By.cssSelector(".fb_logo _8ilh"))
-        WebElement heading2 = driver.findElement(By.cssSelector("._8eso")); // (By.partialLinkText("Connect with friends"))
-        WebElement email_Phone_InputBox = driver.findElement(By.id("email"));
-        WebElement password_InputBox = driver.findElement(By.id("pass"));
-        WebElement loginButton = driver.findElement(By.id("u_0_d_/V"));
-        WebElement forgotPassword = driver.findElement(By.cssSelector(
-                "a[href='https://www.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjUyNzM0MDgzLCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login'")); // driver.findElement(By.linkText("Forgot password?"))
-        WebElement newAcctButton = driver.findElement(By.id("u_0_2_fg"));
+            if (driver.getTitle().equals("Facebook - Log In or Sign Up"))
+                System.out.println("Title validation = PASSED");
+            else System.out.println("Title validation = FAILED");
 
-        if (logo.isDisplayed()) System.out.println("Logo validation = PASSED");
-        else System.out.println("Logo validation = FAILED");
+            if (driver.getCurrentUrl().equals("https://www.facebook.com/"))
+                System.out.println("URL validation = PASSED");
+            else System.out.println("URL validation = FAILED");
 
-        if (heading2.isDisplayed()) System.out.println("Heading2 validation = PASSED");
-        else System.out.println("heading2 validation = FAILED");
+            WebElement logo = driver.findElement(By.cssSelector(".fb_logo")); // driver.findElement(By.cssSelector("img[class='fb_logo'"));
+            WebElement heading2 = driver.findElement(By.cssSelector("._8eso")); // (By.partialLinkText("Connect with friends"))
+            WebElement email_Phone_InputBox = driver.findElement(By.id("email"));
+            WebElement password_InputBox = driver.findElement(By.id("pass"));
+            WebElement loginButton = driver.findElement(By.cssSelector("button[name = 'login']"));
+            WebElement forgotPassword = driver.findElement(By.linkText("Forgot password?"));
+            WebElement newAcctButton = driver.findElement(By.cssSelector("a[ajaxify = '/reg/spotlight/']"));
 
-        if (email_Phone_InputBox.isDisplayed()) System.out.println("Email/Phone input box validation = PASSED");
-        else System.out.println("Email/Phone input box validation = FAILED");
+            if (logo.isDisplayed()) System.out.println("Logo validation = PASSED");
+            else System.out.println("Logo validation = FAILED");
 
-        if (password_InputBox.isDisplayed()) System.out.println("Password input box validation = PASSED");
-        else System.out.println("Password input box validation = FAILED");
+            if (heading2.isDisplayed()) System.out.println("Heading2 validation = PASSED");
+            else System.out.println("heading2 validation = FAILED");
 
-        if (loginButton.isDisplayed() && loginButton.isEnabled()) System.out.println("Login button displayed and enabled validation = PASSED");
-        else System.out.println("Login button displayed and enabled validation = FAILED");
+            if (email_Phone_InputBox.isDisplayed()) System.out.println("Email/Phone input box validation = PASSED");
+            else System.out.println("Email/Phone input box validation = FAILED");
 
-        if (forgotPassword.isDisplayed()) System.out.println("Forgot password validation = PASSED");
-        else System.out.println("Forgot password validation = FAILED");
+            if (password_InputBox.isDisplayed()) System.out.println("Password input box validation = PASSED");
+            else System.out.println("Password input box validation = FAILED");
 
-        if (newAcctButton.isDisplayed()) System.out.println("New account button validation = PASSED");
-        else System.out.println("New account button validation = FAILED");
+            if (loginButton.isDisplayed() && loginButton.isEnabled())
+                System.out.println("Login button displayed and enabled validation = PASSED");
+            else System.out.println("Login button displayed and enabled validation = FAILED");
 
-        System.out.println("END OF THE PROGRAM");
+            if (forgotPassword.isDisplayed()) System.out.println("Forgot password validation = PASSED");
+            else System.out.println("Forgot password validation = FAILED");
 
-        driver.quit();
+            if (newAcctButton.isDisplayed()) System.out.println("New account button validation = PASSED");
+            else System.out.println("New account button validation = FAILED");
+
+            System.out.println("END OF THE PROGRAM");
+
+        }finally {
+            driver.quit();
+        }
+
 
 
 

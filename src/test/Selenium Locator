@@ -15,11 +15,20 @@ It is the fastest way of locating web elements and is most reliable(stable) meth
 4. tagName = the tag name is the HTML tag, such as input, div, anchor tag, button, etc. The tagName locator returns all the elements from the page that has the specified tag.
 5. linkText and 6. partialLinkText = used to locate web elements by using the hyperlink texts. Therefore web element must contain anchor (<a></a>) tags.
 7. CSS Selector (2nd fastest). Syntax ---> CSS Selector: tagName[attribute='value']
-8. XPath (most flexible). Syntax ---> Absolute XPath: /html/body/form/div/span/span
-                                      Relative XPath: //tagName[@attributeName=’value’]
+8. XPath (most flexible (more ways to move between web elements - child to parent) + more methods).
+Syntax ---> Absolute XPath: /html/body/form/div/span/span
+            Relative XPath: //tagName[@attributeName=’value’]
 NOTE: Like the other locator strategies, if multiple hyperlinks with the same texts are present on the page, then Selenium will always choose the FIRST one.
 NOTE: name, link text, className, id, partial link text, tag name locators are looking for the given attribute name, and, finding the matching attribute value.
 
+* CSS values in a style --> style = color: blue --> style[class='blue']
+* NOTE FOR XPATH: IF CLASS HAS MORE THAN ONE CLASS VALUE THEN MUST INCLUDE ALL OF THEM
+* NOTE FOR CSS: absolute path is not reliable to use as the path may change in future release.
 
+** NOTE: DON'T USE DYNAMIC ATTRIBUTES AS LOCATOR AS THEY ARE CONSTANTLY CHANGING WITH EACH BROWSING SESSION.
+ENSURE ITS 1 OF 1 BY COPYING THE VALUE AND REFRESH AND SEE IF ITS STILL EXISTING AND IS 1 OF 1.
 
-
+DOM FINDER: COMMAND + F
+// TAG
+# ID
+. CLASS
